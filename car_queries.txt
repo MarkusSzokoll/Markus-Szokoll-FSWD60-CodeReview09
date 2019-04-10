@@ -1,0 +1,22 @@
+/*Shows which customer rented which car and when*/
+
+SELECT customer.name, reservation.start_dt, reservation.end_dt, car.type
+FROM customer
+INNER JOIN reservation ON customer.customer_id = reservation.fk_customer_id
+INNER JOIN car ON reservation.fk_car_id = car.car_id;
+
+
+
+/*Shows employees */
+SELECT employee.name, employee.SSno
+FROM employee
+
+
+
+/*Shows cars with manufacturer data*/
+
+SELECT car.vin, car.type, car.color, manufacturer.name, manufacturer.address
+FROM car
+INNER JOIN fk_manufacturer_id ON car.fk_manufacturer.id = manufacturer.manufacturer.id;
+
+
